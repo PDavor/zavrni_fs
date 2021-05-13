@@ -1,0 +1,13 @@
+MVP
+Aplikacija za pisanje provjera, MVP ima sustav autentifikacije, 4 uloge, neregistrirani korisnik koji može samo vidjeti materijale na početnoj stranici, zatim registrairani korisnik koji uz to može pisati pisati provjere, vidjeti svoje rezultate, upisati se u predmet, zatim predavač može dodavati materijale i provjere i ocjenjivati provjere, administrator uz sve to može kreirati predmete i njihove profesore.
+Aplikacija mora biti responzivna.
+Materijali i provjera mogu sadržavati slike.
+Provjera uzima pitanja iz materijala.
+Kod kreiranja provjere se može odrediti vrijeme početka, završetka i trajanje.
+Materijali se mogu dodavati, brisati, uređivati.
+
+DODATNO
+Dodavanje vrsta pitanja i različite bodove za svaku vrstu pitanja, dodavanje znački za predmete.
+
+ZAVRŠETAK
+Kad su svi MVP uvjeti zadovoljeni

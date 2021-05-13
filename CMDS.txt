@@ -1,0 +1,34 @@
+Server 
+npm init -y
+npm install body-parser cors express mongoose nodemon 
+https://youtu.be/ngc9gnGgUdA?t=241 objasnjeno zasto treba
+
+Client
+npm install axios moment react-file-base64 redux redux-thunk //samo axios instaliram
+
+cluster
+pdavor
+pdavor123
+
+1. kreira se datoteka u routes za sve povezane routes npm kategorije
+2. napravi se datoteka u controllers i tu se pisu funkcije za route --razlog je preglednost
+3. napravi se schema u models
+
+router.get - za dohvacanje iz baze
+router.post - za slanje u bazu
+
+
+uvijek se koristi try i catch, kod unutar try se izvodi ako nema greske, kod unutar catch se izvodi ako ima gresku
+funkcija mora biti async - asinkrona jer treba vremena da se dohvate podaci, cekaju se - await, tek kad se dohvati const kategorije dobiva vrijednosti
+zatim je potrebno zatraziti odgovor o statusu od server, 200 i kategorije, ako je dobro naravno
+inace se izvrsava catch sa statusom 404 i porukom greske
+
+export const getKategorije = async (req, res) => {
+  try {
+    const kategorije = await kategorijaModel.find();
+
+    res.status(200).json(kategorije);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
+  }
+};
