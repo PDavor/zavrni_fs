@@ -1,0 +1,25 @@
+.predmet {
+  padding: 5rem;
+  background: lightgray;
+  border: 1px solid white;
+  border-radius: 10px;
+  list-style-type: none;
+  font-size: 2rem;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+.predmet:hover {
+  border: 1px solid lightgrey;
+  background: white;
+  color: black !important;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#predmeti {
+  display: flex !important;
+  justify-content: center;
+  max-width: 100vw;
+  flex-wrap: wrap;
+}

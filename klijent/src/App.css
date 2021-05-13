@@ -1,0 +1,17 @@
+#sadrzaj {
+  display: flex;
+  max-width: 75vw;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 5rem;
+  align-items: center;
+  font-size: 1rem;
+  flex-direction: column;
+}
+
+@media all and (max-width: 600px) {
+  #sadrzaj {
+    width: 100vw;
+  }
+}

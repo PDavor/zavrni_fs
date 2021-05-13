@@ -1,0 +1,17 @@
+.kartica-provjere {
+  padding: 2rem;
+  background: lightgray;
+  border: 1px solid white;
+  border-radius: 10px;
+  list-style-type: none;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+
+.kartica-provjere:hover {
+  border: 1px solid lightgrey;
+  background: white;
+  color: black !important;
+  cursor: pointer;
+  text-transform: uppercase;
+}

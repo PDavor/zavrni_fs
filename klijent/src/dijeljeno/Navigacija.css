@@ -1,0 +1,45 @@
+nav {
+  font-size: 1rem;
+  background-color: #f1f1f1;
+  position: absolute;
+  width: 100%;
+}
+
+/* Flex Container */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+nav ul li {
+  padding: 1rem;
+  flex: auto;
+  text-align: center;
+}
+
+nav ul li:hover {
+  background-color: #555;
+  color: white !important;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+/* Responsive Nav Bar */
+@media all and (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    text-align: center;
+  }
+}
