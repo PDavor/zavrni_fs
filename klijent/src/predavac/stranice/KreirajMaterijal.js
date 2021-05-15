@@ -3,7 +3,7 @@ import { KorisnikContext } from "../../dijeljeno/KorisnikContext";
 import axios from "axios";
 
 const KreirajMaterijal = () => {
-  const { user, setUser } = useContext(KorisnikContext);
+  const { user } = useContext(KorisnikContext);
   const [naslov, setNaslov] = useState("");
   const handleNaslov = (event) => {
     setNaslov(event.target.value);

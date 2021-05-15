@@ -3,11 +3,17 @@ import { KorisnikContext } from "../../dijeljeno/KorisnikContext";
 import axios from "axios";
 
 const KreirajPitanje = () => {
-  const { user, setUser } = useContext(KorisnikContext);
+  const { user } = useContext(KorisnikContext);
   const [pitanje, setPitanje] = useState("");
   const handlePitanje = (event) => {
     event.preventDefault();
     setPitanje(event.target.value);
+  };
+
+  const [tocanOdgovor, setTocanOdgovor] = useState("");
+  const handleTocanOdgovor = (event) => {
+    event.preventDefault();
+    setTocanOdgovor(event.target.value);
   };
 
   const [odgovor, setOdgovor] = useState("");
@@ -20,6 +26,7 @@ const KreirajPitanje = () => {
   const dodajOdgovor = (event) => {
     event.preventDefault();
     setOdgovori([...odgovori, odgovor]);
+    setOdgovor("");
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,7 +42,8 @@ const KreirajPitanje = () => {
       .then((res) => {
         setPitanje("");
         setOdgovor("");
-        //console.log({ data });
+        setOdgovori([]);
+        setTocanOdgovor("");
       })
       .catch((err) => {
         //console.log({ data });
@@ -75,6 +83,17 @@ const KreirajPitanje = () => {
           <p key={item}>{item}</p>
         ))}
         <br />
+        <label>
+          <p>Točan odgovor:</p>
+          <input
+            type="text"
+            name="todgovor"
+            placeholder="Točan odgovor"
+            id="todgovor"
+            value={tocanOdgovor}
+            onChange={handleTocanOdgovor}
+          />
+        </label>
         <button type="submit">Pošalji</button>
       </form>
     </>

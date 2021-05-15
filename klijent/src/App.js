@@ -15,7 +15,7 @@ import DodajKategoriju from "./admin/stranice/DodajKategoriju";
 import Kategorije from "./admin/stranice/Kategorije";
 import Podnozje from "./dijeljeno/Podnozje";
 import { KorisnikContext } from "./dijeljeno/KorisnikContext";
-
+import Materijal from "./dijeljeno/Materijal";
 const App = () => {
   const [user, setUser] = useState(null);
   const value = useMemo(() => ({ user, setUser }), [user, setUser]);
@@ -57,6 +57,9 @@ const App = () => {
             </Route>
             <Route path="/kategorije">
               <Kategorije />
+            </Route>
+            <Route path="/materijal/:id">
+              <Materijal />
             </Route>
           </Switch>
         </div>

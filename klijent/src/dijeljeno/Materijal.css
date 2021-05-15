@@ -1,0 +1,12 @@
+.materijal-naziv-tekst {
+  background: #555;
+  width: 50%;
+  color: white;
+  text-align: center;
+  margin-bottom: 2em;
+  border-radius: 5px;
+}
+
+.materijal-naziv-tekst h2 {
+  border-bottom: 1px solid white;
+}

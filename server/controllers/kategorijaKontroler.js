@@ -71,3 +71,15 @@ export const dodajPitanje = async (req, res) => {
     res.status(404).json({ greška: error.message });
   }
 };
+
+export const getMaterijal = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const materijal = await kategorijaModel.findById(id);
+
+    res.status(200).json(materijal);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
+  }
+};
