@@ -22,6 +22,18 @@ const DodajKategoriju = () => {
     axios
       .post("http://localhost:5000/kategorije/", data)
       .then((res) => {
+        //setModerator("");
+        //setKategorija("");
+        console.log({ data });
+      })
+      .catch((err) => {
+        console.log({ data });
+        console.log({ message: err.message });
+      });
+
+    axios
+      .patch("http://localhost:5000/auth/dodaj_moderatora", data)
+      .then((res) => {
         setModerator("");
         setKategorija("");
         console.log({ data });

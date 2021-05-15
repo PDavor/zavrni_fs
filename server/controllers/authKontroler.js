@@ -49,3 +49,18 @@ export const getKorisnikId = async (req, res) => {
     res.status(404).json({ greška: error.message });
   }
 };
+
+export const dodajModeratora = async (req, res) => {
+  try {
+    const { moderator } = req.body;
+    const mod = await authModel.findOneAndUpdate(
+      { _id: moderator },
+      {
+        uloga: "moderator",
+      }
+    );
+    res.status(200).json(mod);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
+  }
+};
