@@ -53,7 +53,7 @@ const Prijava = () => {
       <label>
         <p>Lozinka:</p>
         <input
-          type="text"
+          type="password"
           name="lozinka"
           placeholder="Lozinka"
           id="lozinka"
