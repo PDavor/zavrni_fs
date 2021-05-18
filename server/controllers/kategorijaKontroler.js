@@ -83,3 +83,30 @@ export const getMaterijal = async (req, res) => {
     res.status(404).json({ greška: error.message });
   }
 };
+
+export const dodajProvjeru = async (req, res) => {
+  try {
+    const { moderator, naziv, trajanje } = req.body;
+    const provjera = await kategorijaModel.findOneAndUpdate(
+      { moderator },
+      {
+        $push: {
+          provjere: [{ naziv, trajanje }],
+        },
+      }
+    );
+    res.status(200).json(provjera);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
+  }
+};
+
+export const getProvjere = async (req, res) => {
+  try {
+    const provjere = await kategorijaModel.find({}, { naziv: 1, provjere: 1 });
+
+    res.status(200).json(provjere);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
+  }
+};

@@ -6,6 +6,8 @@ import {
   kreirajKategoriju,
   dodajPitanje,
   getMaterijal,
+  dodajProvjeru,
+  getProvjere,
 } from "../controllers/kategorijaKontroler.js";
 const router = express.Router();
 
@@ -14,6 +16,8 @@ router.post("/", kreirajKategoriju);
 router.get("/mod", getKatMod);
 router.patch("/dodaj_materijal", dodajMaterijal);
 router.patch("/dodaj_pitanje", dodajPitanje);
+router.patch("/dodaj_provjeru", dodajProvjeru);
+router.get("/get_provjere", getProvjere);
 router.get("/:id", getMaterijal);
 
 export default router;
