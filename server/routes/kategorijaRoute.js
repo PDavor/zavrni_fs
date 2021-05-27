@@ -8,6 +8,7 @@ import {
   getMaterijal,
   dodajProvjeru,
   getProvjere,
+  getProvjera,
 } from "../controllers/kategorijaKontroler.js";
 const router = express.Router();
 
@@ -19,5 +20,6 @@ router.patch("/dodaj_pitanje", dodajPitanje);
 router.patch("/dodaj_provjeru", dodajProvjeru);
 router.get("/get_provjere", getProvjere);
 router.get("/:id", getMaterijal);
+router.get("/provjere/:id", getProvjera);
 
 export default router;

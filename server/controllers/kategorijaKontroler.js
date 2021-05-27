@@ -110,3 +110,16 @@ export const getProvjere = async (req, res) => {
     res.status(404).json({ greška: error.message });
   }
 };
+
+export const getProvjera = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const provjera = await kategorijaModel.find({
+      "provjere._id": id,
+    });
+
+    res.status(200).json(provjera);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
+  }
+};
