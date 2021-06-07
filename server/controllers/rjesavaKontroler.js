@@ -1,4 +1,4 @@
-import rjesavaModel from "./rjesavaKontroler";
+import rjesavaModel from "../models/rjesavaModel.js";
 
 export const kreirajRjesava = async (req, res) => {
   try {
@@ -13,5 +13,15 @@ export const kreirajRjesava = async (req, res) => {
   } catch (error) {
     //409 konflikt
     res.status(409).json({ greška: error.message });
+  }
+};
+
+export const getProvjere = async (req, res) => {
+  try {
+    const kategorije = await kategorijaModel.find();
+
+    res.status(200).json(kategorije);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
   }
 };

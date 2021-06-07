@@ -123,3 +123,18 @@ export const getProvjera = async (req, res) => {
     res.status(404).json({ greška: error.message });
   }
 };
+
+export const getProvjerePoMod = async (req, res) => {
+  try {
+    const provjere = await kategorijaModel.find(
+      {
+        moderator: req.body.moderator,
+      },
+      { provjere: 1 }
+    );
+
+    res.status(200).json(provjere);
+  } catch (error) {
+    res.status(404).json({ greška: error.message });
+  }
+};

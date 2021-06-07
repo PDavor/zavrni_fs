@@ -1,8 +1,7 @@
 import express from "express";
-import { kreirajRjesava } from "../controllers/rjesavaKontroler";
-
+import { kreirajRjesava } from "../controllers/rjesavaKontroler.js";
 const router = express.Router();
 
-router.post("/kreiraj_rjesava", kreirajRjesava);
+router.post("/kreiraj", kreirajRjesava);
 
 export default router;

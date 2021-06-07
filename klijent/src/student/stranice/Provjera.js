@@ -3,7 +3,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./Provjera.css";
 import { KorisnikContext } from "../../dijeljeno/KorisnikContext";
+import { useHistory } from "react-router-dom";
+
 const Provjera = () => {
+  let history = useHistory();
   const user = useContext(KorisnikContext);
   let { id } = useParams();
   const [data, setData] = useState();
@@ -13,7 +16,7 @@ const Provjera = () => {
     setRjesenje([
       ...rjesenje,
       {
-        pitanje_id: event.target.name,
+        pitanje: event.target.name,
         odgovor: event.target.value,
       },
     ]);
@@ -41,7 +44,16 @@ const Provjera = () => {
       rjesenja: rjesenje,
     };
 
-    console.log(sendData);
+    axios
+      .post("http://localhost:5000/rjesava/kreiraj", sendData)
+      .then((res) => {
+        console.log({ sendData });
+      })
+      .catch((err) => {
+        console.log({ sendData });
+        console.log({ message: err.message });
+      });
+    history.push("/");
   };
   return (
     <div>
@@ -62,10 +74,8 @@ const Provjera = () => {
                     type="radio"
                     value={o}
                     key={o}
-                    name={p._id}
+                    name={p.pitanje}
                     onClick={handleRjesenje}
-                    pitanje={p.pitanje}
-                    todgovor={p.tocanOdgovor}
                   />
                   <label for={o}>{o}</label>
                 </div>
